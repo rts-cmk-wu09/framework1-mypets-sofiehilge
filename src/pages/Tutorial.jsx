@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import coverimage from "../assets/Animal.png"
 
 const StyledImg = styled.img`
 height: 400px;
@@ -9,7 +10,7 @@ const TutorialApp = () => {
   return (
     <>
       <figure>
-        <StyledImg src="./assets/Animal.png" alt="Cat drawing"/>
+        <StyledImg src={coverimage} alt="Cat drawing"/>
       </figure>
     </>
   );
