@@ -7,6 +7,7 @@
 #root {
   max-width: 768px;
   font-family: 'Lato', sans-serif;
+  
 }
 
 html,
@@ -15,6 +16,7 @@ figure {
   /* hvis du gør dette på * skal resette den på dine p-tags eksempelvis  */
   margin: 0;
   padding: 0;
+  background-color: #F5F5FA;
 }
 
 img {
@@ -23,6 +25,11 @@ img {
 
 .backgroundcolor{
   background-color: #F5F5FA;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
 }
 
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeading = styled((props) => props.as)`
   font-size: ${(props) => props.size}px;
-/*   ${(props) => props.center && 'text-align:center'} */
+  ${(props) => props.center && 'text-align:center'}
 
 `;
 
