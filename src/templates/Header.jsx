@@ -41,15 +41,9 @@ const Header = () => {
         <StyledDiv>
           <Icon icon={<FaMapPin />} />
           <StyledSelect>
-            <option value="New York">
-              <Paragraf size="16" color="333333" text="New York City" />
-            </option>
-            <option value="Copenhagen">
-              <Paragraf size="16" color="333333" text="Copenhagen" />
-            </option>
-            <option value="Buenos Aires">
-              <Paragraf size="16" color="333333" text="Buenos Aires" />
-            </option>
+            <option value="New York">New York</option>
+            <option value="Copenhagen">Copenhagen</option>
+            <option value="Buenos Aires">Buenos Aires</option>
           </StyledSelect>
           {/* <Paragraf size="16" color="333333" text="New York City" />
         <Icon icon={<FaCaretDown />} /> */}
