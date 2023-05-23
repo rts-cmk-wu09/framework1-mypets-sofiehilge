@@ -20,6 +20,7 @@ const TutorialText = () => {
         color="828282"
         text="Taking care of a pet is my favorite, it helps me to gaimr stress and fatigue."
         center={true}
+        lineheight="24"
       />
       <StyledHr />
     </StyledArticle>

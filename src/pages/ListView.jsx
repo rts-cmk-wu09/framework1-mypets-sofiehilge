@@ -1,5 +1,7 @@
+import Header from "../templates/Header";
+
 const ListView = () => {
-    return ( <h1>ListView</h1> );
+    return ( <Header/> );
 }
  
 export default ListView;
