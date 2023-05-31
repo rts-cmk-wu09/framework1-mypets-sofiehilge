@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import animalportrait from "../assets/animalportrait.png";
 import Heading from "../components/Heading";
+import ButtonIcon from "../components/ButtonIcon";
 import Icon from "../components/icon";
-import { FaMapPin } from "react-icons/fa";
+import { FaHeart, FaMapPin } from "react-icons/fa";
 import Paragraf from "../components/Paragraf";
 
 const StyledCardContainer = styled.article`
@@ -40,10 +41,10 @@ const AnimalCard = () => {
       <StyledColumn>
         <StyledRow>
           <Heading title="Greyhound" size="20" center={false} as="h2" />
-          <Icon icon={<FaMapPin />} />
+          <ButtonIcon icon={<FaHeart />} />
         </StyledRow>
         <StyledRow>
-          <Icon icon={<FaMapPin />} />
+        <Icon icon={<FaMapPin />} />
           <Paragraf
             size="18"
             color="828282"
