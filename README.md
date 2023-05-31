@@ -29,3 +29,10 @@
 ### **Deadlink**:
 - I har 8 arbejdsdage til at løse opgaven. 
 - Opgaven skal afleveres senenst d. 8/6 kl. 14:24. Classroom'et lukker 14:25!
+
+
+### petfinder apiet kræver et token
+-- apiet kræver et man medsender nogle ting som skal matche api'et, og så får man sendt et token tilbage.
+
+-- et token vare kun en time, så fejlsøg inden man rykker videre.
+

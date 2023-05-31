@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { FaBell, FaCaretDown, FaMapPin } from "react-icons/fa";
+import { FaBell, FaMapPin } from "react-icons/fa";
 import ButtonIcon from "../components/ButtonIcon";
 import Icon from "../components/icon";
 import portriat from "../assets/Rectangle.png";
-import Paragraf from "../components/Paragraf";
+
 
 const StyledHeader = styled.header`
   display: flex;
