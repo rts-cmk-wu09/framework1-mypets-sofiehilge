@@ -4,9 +4,12 @@ const StyledIcon = styled.i`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #${(props) => props.color};
+  width: 20px;
+  height: 20px;
 `;
 const Icon = (props) => {
-  return <StyledIcon>{props.icon}</StyledIcon>;
+  return <StyledIcon {...props}>{props.icon}</StyledIcon>;
 };
 
 export default Icon;

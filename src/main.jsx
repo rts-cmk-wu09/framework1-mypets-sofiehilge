@@ -12,12 +12,14 @@ import {
 import TutorialApp from "./pages/Tutorial.jsx";
 import ListView from "./pages/ListView.jsx";
 import ErrorView from "./pages/ErrorView.jsx";
+import DetailView from "./pages/DetailView.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorView />}>
       <Route index element={<TutorialApp />} />
       <Route path="/listview/" element={<ListView />} />
+      <Route path="/detailview" element ={<DetailView/>}/>
     </Route>
   )
 );

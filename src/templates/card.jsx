@@ -30,8 +30,16 @@ const StyledColumn = styled.div`
 const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   width: 200px;
+  padding: 5px;
+`;
+
+const StyledRowSpace = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  padding: 5px;
+  justify-content: space-between;
 `;
 
 const AnimalCard = () => {
@@ -39,18 +47,25 @@ const AnimalCard = () => {
     <StyledCardContainer>
       <StyledImg src={animalportrait} alt="animal portrait" />
       <StyledColumn>
+        <StyledRowSpace>
+          <Heading
+            title="Greyhound"
+            size="20"
+            center={false}
+            fam="'Lato', sans-serif"
+            as="h2"
+          />
+          <ButtonIcon icon={<FaHeart color="FF4B33" />} />
+        </StyledRowSpace>
         <StyledRow>
-          <Heading title="Greyhound" size="20" center={false} as="h2" />
-          <ButtonIcon icon={<FaHeart />} />
-        </StyledRow>
-        <StyledRow>
-        <Icon icon={<FaMapPin />} />
+          <Icon icon={<FaMapPin color="57419d" />} />
           <Paragraf
-            size="18"
+            size="12"
             color="828282"
             text="New York City"
             center={false}
             lineheight="18"
+            fam="'Montserrat', sans-serif;"
           />
         </StyledRow>
         <Paragraf
@@ -59,6 +74,7 @@ const AnimalCard = () => {
           text="Taking care of a pet is my favorite, it helps me to ..."
           center={false}
           lineheight="20"
+          fam="'Montserrat', sans-serif;"
         />
       </StyledColumn>
     </StyledCardContainer>

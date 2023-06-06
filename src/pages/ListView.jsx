@@ -3,6 +3,7 @@ import AnimalCategories from "../components/Categories";
 import styled from "styled-components";
 import AnimalCard from "../templates/card";
 import Footer from "../templates/Footer";
+import { Link } from "react-router-dom";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -16,6 +17,8 @@ const StyledColumn = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
+
 const ListView = () => {
   return (
     <>
@@ -27,7 +30,10 @@ const ListView = () => {
         <AnimalCategories />
       </StyledDiv>
       <StyledColumn>
-        <AnimalCard />
+        <Link to="/detailview">
+          <AnimalCard />
+        </Link>
+
         <AnimalCard />
         <AnimalCard />
         <AnimalCard />

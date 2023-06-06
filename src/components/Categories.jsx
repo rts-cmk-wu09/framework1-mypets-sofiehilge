@@ -10,11 +10,11 @@ const StyledCategories = styled.button`
   border: none;
   text-decoration: none;
   width: fit-content;
+  height: 32px;
   padding: 0 2rem;
   margin: 5px;
   gap: 5px;
   text-align: center;
-  height: 20px;
   display: flex;
   align-items: center;
 `;
@@ -29,6 +29,7 @@ const AnimalCategories = () => {
         color="7878AB"
         lineheight="20"
         weight="700"
+        fam="'Lato', sans-serif;"
       />
     </StyledCategories>
   );

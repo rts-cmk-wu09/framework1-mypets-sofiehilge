@@ -2,6 +2,7 @@ import styled from "styled-components";
 import coverimage from "../assets/Animal.png";
 import TutorialText from "../templates/TutorialText";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const StyledFigure = styled.figure`
   display: flex;
@@ -30,7 +31,9 @@ const TutorialApp = () => {
         <StyledImg src={coverimage} alt="Cat drawing" />
         <TutorialText />
       </StyledFigure>
-      <Button text="Skip" />
+      <Link to="/listview">
+        <Button text="Skip" />
+      </Link>
     </StyledDiv>
   );
 };

@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { FaBell, FaMapPin } from "react-icons/fa";
+import { FaBell, FaCaretDown, FaMapPin } from "react-icons/fa";
 import ButtonIcon from "../components/ButtonIcon";
 import Icon from "../components/icon";
 import portriat from "../assets/Rectangle.png";
-
 
 const StyledHeader = styled.header`
   display: flex;
@@ -20,7 +19,6 @@ const StyledImage = styled.img`
 
 const StyledFlex = styled.div`
   display: flex;
-  align-items: flex-start;
   align-self: center;
 `;
 const StyledDiv = styled.div`
@@ -31,6 +29,10 @@ const StyledDiv = styled.div`
 const StyledSelect = styled.select`
   border: none;
   background-color: inherit;
+  color: #57419d;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+
 `;
 
 const Header = () => {
@@ -39,18 +41,16 @@ const Header = () => {
       <StyledFlex>
         <StyledImage src={portriat} alt="portrait" />
         <StyledDiv>
-          <Icon icon={<FaMapPin />} />
+          <Icon icon={<FaMapPin color="57419d" />} />
           <StyledSelect>
             <option value="New York">New York</option>
             <option value="Copenhagen">Copenhagen</option>
             <option value="Buenos Aires">Buenos Aires</option>
           </StyledSelect>
-          {/* <Paragraf size="16" color="333333" text="New York City" />
-        <Icon icon={<FaCaretDown />} /> */}
         </StyledDiv>
       </StyledFlex>
 
-      <ButtonIcon icon={<FaBell />} />
+      <ButtonIcon icon={<FaBell color="5533EA" />} />
     </StyledHeader>
   );
 };
