@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { FaBell, FaCaretDown, FaMapPin } from "react-icons/fa";
+import { FaBell, FaMapMarkerAlt} from "react-icons/fa";
+import { BiBell } from "react-icons/bi"
 import ButtonIcon from "../components/ButtonIcon";
 import Icon from "../components/icon";
 import portriat from "../assets/Rectangle.png";
@@ -41,7 +42,7 @@ const Header = () => {
       <StyledFlex>
         <StyledImage src={portriat} alt="portrait" />
         <StyledDiv>
-          <Icon icon={<FaMapPin color="57419d" />} />
+          <Icon icon={<FaMapMarkerAlt color="57419d" />} />
           <StyledSelect>
             <option value="New York">New York</option>
             <option value="Copenhagen">Copenhagen</option>
@@ -50,7 +51,7 @@ const Header = () => {
         </StyledDiv>
       </StyledFlex>
 
-      <ButtonIcon icon={<FaBell color="5533EA" />} />
+      <ButtonIcon icon={<BiBell color="5533EA" />} />
     </StyledHeader>
   );
 };

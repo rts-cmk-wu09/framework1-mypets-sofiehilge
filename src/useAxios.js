@@ -16,8 +16,7 @@ function useAxios() {
             "https://api.petfinder.com/v2/oauth2/token",
             JSON.stringify({
               grant_type: "client_credentials",
-              client_id:
-                "CvI88lmSmxr4HkhwEwvnLJftOaGkGqA5KEHUyiZqG2HydpQaNb",
+              client_id: "CvI88lmSmxr4HkhwEwvnLJftOaGkGqA5KEHUyiZqG2HydpQaNb",
             }),
             { headers: { "content-type": "application/json" } }
           );

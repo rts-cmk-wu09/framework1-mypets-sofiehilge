@@ -8,6 +8,7 @@ const StyledParagraf = styled.p`
   line-height: ${(props) => props.lineheight}px;
   ${(props) => props.center && "text-align:center"}
   margin: 0;
+  word-wrap: break-word;
 `;
 
 const Paragraf = (props) => {

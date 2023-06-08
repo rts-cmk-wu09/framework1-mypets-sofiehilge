@@ -13,6 +13,10 @@ const StyledFooter = styled.div`
     10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 `;
 const Footer = () => {
   return (
