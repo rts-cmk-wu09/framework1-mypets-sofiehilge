@@ -66,8 +66,7 @@ const AnimalCard = () => {
           {data.animals.map((animal) => (
             <Link to={`detailview/${animal.id}`} key={animal.id}>
               <StyledCardContainer>
-                <StyledImg /* src={animal.photos[0] != [] && animal.photos[0]} */
-                />
+                <StyledImg src={animal.photos[0] != [] && animal.photos[0]}/>
                 <StyledColumn>
                   <StyledRowSpace>
                     <Heading

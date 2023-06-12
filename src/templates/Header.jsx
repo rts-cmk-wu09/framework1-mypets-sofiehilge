@@ -37,19 +37,22 @@ const StyledSelect = styled.select`
 `;
 
 const Header = () => {
-  /*  setContext [context, setContext] = useOutletContext(); bruges fordi det ligger på dybere niveauer.
+  setContext [context, setContext] = useOutletContext();
   
-  console.log(`fetch("https://api... bla bla ${location}"))*/
+  /* console.log(`fetch("https://api... bla bla ${location}")) */
   return (
     <StyledHeader>
       <StyledFlex>
         <StyledImage src={portriat} alt="portrait" />
         <StyledDiv>
           <Icon icon={<FaMapMarkerAlt color="57419d" />} />
-          <StyledSelect>
-            <option value="indsæt zip-code">New York</option>
-            <option value="Copenhagen">Copenhagen</option>
-            <option value="Buenos Aires">Buenos Aires</option>
+          <StyledSelect onChange={(event) =>{
+            let location = event.target.value;
+            setContext(location)
+          }}>
+            <option value="132u29852">New York</option>
+            <option value="1348u23oi5u2">Copenhagen</option>
+            <option value="134134i431">Buenos Aires</option>
           </StyledSelect>
         </StyledDiv>
       </StyledFlex>
