@@ -19,7 +19,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />} errorElement={<ErrorView />}>
       <Route index element={<TutorialApp />} />
       <Route path="/listview/" element={<ListView />} />
-      <Route path="/detailview" element ={<DetailView/>}/>
+      <Route path="/detailview/:id" /*:id */ element ={<DetailView/>}/>
     </Route>
   )
 );

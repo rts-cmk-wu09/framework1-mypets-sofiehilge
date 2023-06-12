@@ -48,3 +48,19 @@ eg.
 CONTEXT: er en state, men modsat en useState som kan hookes på et komponenet bruger vi en context variable der er predefineret som globalt. context= er en prop der gør state globalt, således at den fungere på hele hjemmesiden.
 
 metoden useOutletContext: gør det muligt for os at bruge alt det der er i vores context.
+
+<select
+onChange={(event) =>{
+  let location = event.target.value;
+  setContext(location)
+}>
+<option value>
+
+
+event objektet kan sendes med med en masse værdier. 
+>
+
+installer react developer tool
+så kan man se component strukturen
+
+se outlet
