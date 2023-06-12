@@ -56,7 +56,10 @@ onChange={(event) =>{
 }>
 <option value>
 
-
+<!-- onChange={(event) =>{
+            let location = event.target.value;
+            setContext(location)
+          }} -->
 event objektet kan sendes med med en masse værdier. 
 >
 

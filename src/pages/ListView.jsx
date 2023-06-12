@@ -1,7 +1,7 @@
 import Header from "../templates/Header";
 import AnimalCategories from "../components/Categories";
 import styled from "styled-components";
-import AnimalCard from "../templates/card";
+import AnimalCard from "../templates/Card";
 import Footer from "../templates/Footer";
 import { Link } from "react-router-dom";
 import useAxios from "../useAxios";

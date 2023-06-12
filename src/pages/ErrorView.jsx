@@ -1,5 +1,43 @@
+import Lottie from "lottie-react";
+import errorLottie from "../assets/lottiefiles/error.json";
+import styled from "styled-components";
+import Paragraf from "../components/Paragraf";
+import { Link } from "react-router-dom";
+
+const StyledLottie = styled(Lottie)`
+  width: 50vw;
+  height: 50vw;
+`;
+
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+`;
+
 const ErrorView = () => {
-    return ( <h1>ERROR</h1> );
+    return ( 
+    <StyledSection>
+        <Heading title="Something went wront..."
+                      size="20"
+                      center={false}
+                      fam="'Lato', sans-serif"
+                      as="h2"/>
+        <Paragraf
+        text="Take the dog for a walk, or..."
+        size="12"
+        color="828282"
+        center={true}
+        lineheight="18"
+        fam="'Montserrat', sans-serif;"
+      />
+<StyledLottie animationData={errorLottie}/>
+<Link to="/listview">
+    <Button text="Go back to listview"/>
+</Link>
+    </StyledSection>
+     );
 }
  
 export default ErrorView;

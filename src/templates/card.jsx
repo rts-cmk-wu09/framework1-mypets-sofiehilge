@@ -6,6 +6,9 @@ import { FaHeart, FaMapMarkerAlt } from "react-icons/fa";
 import Paragraf from "../components/Paragraf";
 import useAxios from "../useAxios";
 import { Link } from "react-router-dom";
+import Portrait from "../components/Portrait";
+import LoadingView from "../pages/LoadingView";
+import ErrorView from "../pages/ErrorView";
 
 const StyledCardContainer = styled.article`
   display: flex;
@@ -17,11 +20,7 @@ const StyledCardContainer = styled.article`
   margin: 26px;
 `;
 
-const StyledImg = styled.img`
-  width: 124px;
-  height: 124px;
-  object-fit: cover;
-`;
+
 
 const StyledColumn = styled.div`
   display: flex;
@@ -57,8 +56,8 @@ const AnimalCard = () => {
   const [data, error, loading] = useAxios("animals");
   return (
     <>
-      {error && <p>Der opstod en fejl...</p>}
-      {loading && <p>loading...</p>}
+      {error && <ErrorView/>}
+      {loading && <LoadingView/>}
       {/* Hvis denne her er true så skriv loading... */}
       {data /* Hvis data er hentet så sæt nedenstående ind.  */ && (
         /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
@@ -66,7 +65,8 @@ const AnimalCard = () => {
           {data.animals.map((animal) => (
             <Link to={`detailview/${animal.id}`} key={animal.id}>
               <StyledCardContainer>
-                <StyledImg src={animal.photos[0] != [] && animal.photos[0]}/>
+            {/*     {(animal) => animals.photos && <Portrait animal={photos} key={animal.StyledCardContainer}/>} */}
+                {/* <Portrait (animal) => animals.photos && animal={photos} key={animal.StyledCardContainer}/> */}
                 <StyledColumn>
                   <StyledRowSpace>
                     <Heading
