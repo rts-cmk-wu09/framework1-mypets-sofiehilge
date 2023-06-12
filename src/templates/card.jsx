@@ -5,6 +5,7 @@ import Icon from "../components/icon";
 import { FaHeart, FaMapMarkerAlt } from "react-icons/fa";
 import Paragraf from "../components/Paragraf";
 import useAxios from "../useAxios";
+import { Link } from "react-router-dom";
 
 const StyledCardContainer = styled.article`
   display: flex;
@@ -53,18 +54,20 @@ const StyledP = styled.p`
 `;
 
 const AnimalCard = () => {
-  const [data, error, loading] = useAxios(); /* Her destrukturere vi en variable, i samme rækkefølge som den er blevet sendt med!! */
+  const [data, error, loading] = useAxios("animals");
   return (
     <>
-      {error && <p>Der opstod en fejl...</p>}{/* Hvis denne her er true så skriv p taget */}
-      {loading && <p>loading...</p>}{/* Hvis denne her er true så skriv loading... */}
-      {data && (/* Hvis data er hentet så sæt nedenstående ind.  */
-      /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
+      {error && <p>Der opstod en fejl...</p>}
+      {loading && <p>loading...</p>}
+      {/* Hvis denne her er true så skriv loading... */}
+      {data /* Hvis data er hentet så sæt nedenstående ind.  */ && (
+        /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
         <>
           {data.animals.map((animal) => (
-            <div key={animal.id}>
+            <Link to={`detailview/${animal.id}`} key={animal.id}>
               <StyledCardContainer>
-                <StyledImg src={animal.photos[0] != [] && animal.photos[0]} />
+                <StyledImg /* src={animal.photos[0] != [] && animal.photos[0]} */
+                />
                 <StyledColumn>
                   <StyledRowSpace>
                     <Heading
@@ -98,7 +101,7 @@ const AnimalCard = () => {
                   </StyledSpan>
                 </StyledColumn>
               </StyledCardContainer>
-            </div>
+            </Link>
           ))}
         </>
       )}

@@ -27,36 +27,19 @@ const StyledColumn = styled.div`
 `;
 
 const ListView = (props) => {
-  const [data, error, loading] = useAxios("animals");
-
   return (
     <>
-      {error && <p>Der opstod en fejl...</p>}
-
-      {loading && <p>loading...</p>}
-      {/* Hvis denne her er true så skriv loading... */}
-      {data /* Hvis data er hentet så sæt nedenstående ind.  */ && (
-        /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
-        <>
-          {data.animals.map((animal) => (
-            <div key={animal.id}>
-              <Header />
-              <StyledDiv>
-                <AnimalCategories />
-                <AnimalCategories />
-                <AnimalCategories />
-                <AnimalCategories />
-              </StyledDiv>
-              <StyledColumn>
-                <Link to={`/detailview/${animal.id}`}>
-                  <AnimalCard />
-                </Link>
-              </StyledColumn>
-              <Footer />
-            </div>
-          ))}
-        </>
-      )}
+      <Header />
+      <StyledDiv>
+        <AnimalCategories />
+        <AnimalCategories />
+        <AnimalCategories />
+        <AnimalCategories />
+      </StyledDiv>
+      <StyledColumn>
+          <AnimalCard />
+      </StyledColumn>
+      <Footer />
     </>
   );
 };
