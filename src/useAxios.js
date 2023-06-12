@@ -4,8 +4,8 @@ import { useOutletContext } from "react-router-dom";
 
 function useAxios() {
   const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); /* null, false, undefined er falsy værdier */
+  const [loading, setLoading] = useState(true); /* Vi sætter loading state igang med det samme, for det vil trigge en opdatering af contexten */
   const [context, setContext] = useOutletContext();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function useAxios() {
             token: data.access_token,
             expire: data.expires_in + Math.floor(Date.now() / 1000),
           });
-        } else {
+        } else {/* Når token er blevet returneret, så opdatere vi vores data variable med setData metode */
           const nextResponse = await axios.get(
             "https://api.petfinder.com/v2/animals",
             {
@@ -35,15 +35,17 @@ function useAxios() {
             }
           );
           const nextData = nextResponse.data;
-          setData(nextData);
+          setData(nextData);/* Er der data, så fjerner vi loading */
           setLoading(false);
         }
-      } catch (err) {
+      } catch (err) { /* Hvis der er en error, så sætter vi den til error. */
         setError(err);
       }
     };
     getResponse();
-  }, [context]);
+  }, [context]); 
+  /* HVis context opdateres så kør hele møllen igen. If: spørger om der er et token og hvis ikke  der er et token så hent et, med udløb om en time
+  else: siger hent dataen */
 
   return [data, error, loading];
   // retuner et array med data, error og loadingstate

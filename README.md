@@ -36,3 +36,15 @@
 
 -- et token vare kun en time, så fejlsøg inden man rykker videre.
 
+til listen med byer hvor dyr er sat op til adoption skal man bruge:
+-- brug setlocation og dropdown location, når det er en ny by der skal vælges så vælg den. 
+
+---- /animals?location=nyc man deklarere en ny variable med ?location og finder et navn. 
+--- tag værdien derfra og sæt den ind i urlen. find værdien i boksen, gem værdien fra variablen efter =-tegnet.
+
+eg.
+- [location, setLocation] on change kig på hvilken en værdi der er  valgt og ændre listen. 
+
+CONTEXT: er en state, men modsat en useState som kan hookes på et komponenet bruger vi en context variable der er predefineret som globalt. context= er en prop der gør state globalt, således at den fungere på hele hjemmesiden.
+
+metoden useOutletContext: gør det muligt for os at bruge alt det der er i vores context.

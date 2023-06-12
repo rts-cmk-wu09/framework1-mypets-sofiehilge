@@ -17,6 +17,13 @@ const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* display: grid;
+  position: fixed;
+  width: calc(100vw - 4rem);
+  padding: 0 2rem;
+  background-color: #fff;
+  height: 60px;
+  grid-template-columns: 1fr 1fr 1fr; */
 `;
 
 const ListView = () => {

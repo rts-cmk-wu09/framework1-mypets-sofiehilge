@@ -16,11 +16,11 @@ const StyledCardContainer = styled.article`
   margin: 26px;
 `;
 
-/* const StyledImg = styled.img`
+const StyledImg = styled.img`
   width: 124px;
   height: 124px;
   object-fit: cover;
-`; */
+`;
 
 const StyledColumn = styled.div`
   display: flex;
@@ -53,17 +53,18 @@ const StyledP = styled.p`
 `;
 
 const AnimalCard = () => {
-  const [data, error, loading] = useAxios();
+  const [data, error, loading] = useAxios(); /* Her destrukturere vi en variable, i samme rækkefølge som den er blevet sendt med!! */
   return (
     <>
-      {error && <p>Der opstod en fejl...</p>}
-      {loading && <p>loading...</p>}
-      {data && (
+      {error && <p>Der opstod en fejl...</p>}{/* Hvis denne her er true så skriv p taget */}
+      {loading && <p>loading...</p>}{/* Hvis denne her er true så skriv loading... */}
+      {data && (/* Hvis data er hentet så sæt nedenstående ind.  */
+      /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
         <>
           {data.animals.map((animal) => (
             <div key={animal.id}>
               <StyledCardContainer>
-                {/* <StyledImg src={`https://photos.petfinder.com/photos/pets/${id}/${animal.photo[0]}`} alt="animal portrait" /> */}
+                <StyledImg src={animal.photos[0] != [] && animal.photos[0]} />
                 <StyledColumn>
                   <StyledRowSpace>
                     <Heading
@@ -89,10 +90,10 @@ const AnimalCard = () => {
                   <StyledSpan>
                     <StyledP>
                       {animal.description != null &&
-                      animal.description.length > 50
+                      animal.description.length > 100
                         ? animal.description.split(" ").slice(0, 3).join(" ") +
                           "..."
-                        : "Hello"}
+                        : "Click for more details..."}
                     </StyledP>
                   </StyledSpan>
                 </StyledColumn>

@@ -5,6 +5,9 @@ import Paragraf from "../components/Paragraf";
 const StyledArticle = styled.article`
   width: 100%;
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const StyledHr = styled.hr`
