@@ -3,6 +3,8 @@ import errorLottie from "../assets/lottiefiles/error.json";
 import styled from "styled-components";
 import Paragraf from "../components/Paragraf";
 import { Link } from "react-router-dom";
+import Heading from "../components/Heading";
+import Button from "../components/Button";
 
 const StyledLottie = styled(Lottie)`
   width: 50vw;
@@ -14,6 +16,7 @@ const StyledSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  margin-top: 5rem;
 `;
 
 const ErrorView = () => {

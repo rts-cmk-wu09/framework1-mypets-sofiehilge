@@ -67,3 +67,30 @@ installer react developer tool
 så kan man se component strukturen
 
 se outlet
+
+BOOKMARK:
+-kan bruges til at få like til at virke. 
+
+- laves ved at localStorage gemmer værdieren, men ulempen kan være at man skal bruge et library til at iterere hen over dem. 
+
+hvad er opgaven?
+1. jeg skal kunne lytte på hvornår brugeren klikker på bookmark. 
+2. Vi har idet i urlen når vi trykker ind på detalje-siden, id'et er 100% unikt, det kan bruges til at identificere når der trykke spå bookmarket. 
+3. læg idet ned i objektet som en nøgle og titlen på filmen er værdien.
+
+4. brug useParams, til at hente idet ned
+5. destrukturere objektet 
+6. opret state for at se om den er bookmarked eller ikke bookmarked.const [bookmarker, setBookmarked] = useState
+
+7. så kan man på onclick se om bookmarked er sat eller ikek er sat. 
+
+
+----
+state.variabler er variabler vi har mulighed for at opdatere hen over tid. Når bookmarket klikkes på, opdateres den. 
+udgangspunktet for state variablet er at den er false, fordi det skal være brugeren der bookmarker selv.
+
+- der tjekkes i localstorage om den er bookmarked, og så bliver den sat til false i state objektet.
+
+-{!bookmarked? <StyledFaRegBookmark/> : <StyledFaBookmark/>}
+
+- hvi

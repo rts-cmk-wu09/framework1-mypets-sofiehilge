@@ -6,10 +6,22 @@ import { FaHeart, FaMapMarkerAlt } from "react-icons/fa";
 import Paragraf from "../components/Paragraf";
 import useAxios from "../useAxios";
 import { Link } from "react-router-dom";
-import Portrait from "../components/Portrait";
 import LoadingView from "../pages/LoadingView";
 import ErrorView from "../pages/ErrorView";
+import dogImg from "../assets/Animal.png";
 
+
+const StyledImg = styled.img`
+  object-fit: cover;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  border-radius: 32px;
+`
+const StyledFigure = styled.figure`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 const StyledCardContainer = styled.article`
   display: flex;
   justify-content: space-evenly;
@@ -19,8 +31,6 @@ const StyledCardContainer = styled.article`
   border-radius: 32px;
   margin: 26px;
 `;
-
-
 
 const StyledColumn = styled.div`
   display: flex;
@@ -56,8 +66,8 @@ const AnimalCard = () => {
   const [data, error, loading] = useAxios("animals");
   return (
     <>
-      {error && <ErrorView/>}
-      {loading && <LoadingView/>}
+      {error && <ErrorView />}
+      {loading && <LoadingView />}
       {/* Hvis denne her er true så skriv loading... */}
       {data /* Hvis data er hentet så sæt nedenstående ind.  */ && (
         /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
@@ -65,8 +75,11 @@ const AnimalCard = () => {
           {data.animals.map((animal) => (
             <Link to={`detailview/${animal.id}`} key={animal.id}>
               <StyledCardContainer>
-            {/*     {(animal) => animals.photos && <Portrait animal={photos} key={animal.StyledCardContainer}/>} */}
-                {/* <Portrait (animal) => animals.photos && animal={photos} key={animal.StyledCardContainer}/> */}
+             <StyledFigure>
+              <StyledImg width="124" height="124" src={
+                      animal.photos.length > 0 ? animal.photos[0].full : dogImg
+                    }/>
+             </StyledFigure>
                 <StyledColumn>
                   <StyledRowSpace>
                     <Heading
