@@ -5,6 +5,7 @@ import AnimalCard from "../templates/Card";
 import Footer from "../templates/Footer";
 import { Link } from "react-router-dom";
 import useAxios from "../useAxios";
+import Paragraf from "../components/Paragraf";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -31,13 +32,33 @@ const ListView = (props) => {
     <>
       <Header />
       <StyledDiv>
-        <AnimalCategories />
-        <AnimalCategories />
-        <AnimalCategories />
-        <AnimalCategories />
+        <AnimalCategories
+          text="Birds"
+          size="12"
+          color="828282"
+          center={false}
+          lineheight="18"
+          fam="'Montserrat', sans-serif;"
+        />
+        <AnimalCategories
+          text="Dog"
+          size="12"
+          color="828282"
+          center={false}
+          lineheight="18"
+          fam="'Montserrat', sans-serif;"
+        />
+        <AnimalCategories
+          text="Cats"
+          size="12"
+          color="828282"
+          center={false}
+          lineheight="18"
+          fam="'Montserrat', sans-serif;"
+        />
       </StyledDiv>
       <StyledColumn>
-          <AnimalCard />
+        <AnimalCard />
       </StyledColumn>
       <Footer />
     </>

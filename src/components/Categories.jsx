@@ -17,22 +17,17 @@ const StyledCategories = styled.button`
   text-align: center;
   display: flex;
   align-items: center;
+  font-family: ${(props) => props.fam};
+  font-size: ${(props) => props.size}px;
+  font-weight: ${(props) => props.weight};
+  color: #${(props) => props.color};
+  line-height: ${(props) => props.lineheight}px;
+  ${(props) => props.center && "text-align:center"}
+  word-wrap: break-word;
 `;
 
-const AnimalCategories = () => {
-  return (
-    <StyledCategories>
-      <Paragraf
-        text="cats"
-        size="16"
-        center={true}
-        color="7878AB"
-        lineheight="20"
-        weight="700"
-        fam="'Lato', sans-serif;"
-      />
-    </StyledCategories>
-  );
+const AnimalCategories = (props) => {
+  return <StyledCategories {...props}>{props.text}</StyledCategories>;
 };
 
 export default AnimalCategories;

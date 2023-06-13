@@ -17,6 +17,7 @@ const StyledDetailCard = styled.main`
   border-top-right-radius: 5%;
   margin-top: -2rem;
   padding: 2rem;
+  position: absolute;
 `;
 
 const StyledRow = styled.div`

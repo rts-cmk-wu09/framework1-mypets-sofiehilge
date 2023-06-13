@@ -52,7 +52,6 @@ const Header = () => {
           </StyledSelect>
         </StyledDiv>
       </StyledFlex>
-
       <ButtonIcon icon={<BiBell color="5533EA" />} />
     </StyledHeader>
   );

@@ -1,25 +1,38 @@
 import styled from "styled-components";
-import animalportrait from "../assets/animalportrait.png"
+import dogImg from "../assets/Animal.png";
+import { useParams } from "react-router-dom";
+import useAxios from "../useAxios";
 
 const StyledImg = styled.img`
-   width: 243px;
-  height: 243px;
+  /*   width: 243px;
+  height: 243px; */
   object-fit: cover;
-  padding-bottom: 2rem;
+  width: 100%;
+  height: 100%;
 `;
 
 const StyledBackground = styled.figure`
- background-color: #57419D;
- height: 350px;
- display: flex;
- justify-content: end;
- align-items: end;
+  height: 350px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 `;
 
 const DetailPortrait = () => {
+  let { id } = useParams();
+  const [data, error, loading] = useAxios(id);
+
   return (
-    <StyledBackground>
-      <StyledImg src={animalportrait} alt="animalportrait" />
+    <StyledBackground key="id">
+      <StyledImg
+        width="124"
+        height="124"
+        src={
+          data && data.animal.photos.length > 0
+            ? data.animal.photos[0].full
+            : dogImg
+        }
+      />
     </StyledBackground>
   );
 };
