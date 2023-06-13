@@ -63,7 +63,7 @@ const StyledP = styled.p`
 `;
 
 const AnimalCard = () => {
-  const [data, error, loading] = useAxios("animals");
+  const [data, error, loading] = useAxios();
   return (
     <>
       {error && <ErrorView />}
@@ -73,7 +73,7 @@ const AnimalCard = () => {
         /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
         <>
           {data.animals.map((animal) => (
-            <Link to={`detailview/${animal.id}`} key={animal.id}>
+            <Link to={`/detailview/${animal.id}`} key={animal.id}>
               <StyledCardContainer>
              <StyledFigure>
               <StyledImg width="124" height="124" src={

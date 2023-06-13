@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
-function useAxios(endpoint, location) { /*det her  */
+function useAxios(id = "") { /*det her  */
   const [data, setData] = useState(null);
   const [error, setError] = useState(null); /* null, false, undefined er falsy værdier */
   const [loading, setLoading] = useState(true); /* Vi sætter loading state igang med det samme, for det vil trigge en opdatering af contexten */
@@ -26,8 +26,7 @@ function useAxios(endpoint, location) { /*det her  */
             expire: data.expires_in + Math.floor(Date.now() / 1000),
           });
         } else {/* Når token er blevet returneret, så opdatere vi vores data variable med setData metode */
-          const nextResponse = await axios.get(
-            `https://api.petfinder.com/v2/${endpoint}?=${location}`,
+          const nextResponse = await axios.get(id ? `https://api.petfinder.com/v2/animals/${id}` : `https://api.petfinder.com/v2/animals/`,
             {
               headers: {
                 Authorization: "Bearer " + context.token,

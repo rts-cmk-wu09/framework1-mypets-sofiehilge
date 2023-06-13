@@ -16,18 +16,23 @@ const StyledSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 5rem;
 `;
 
 const ErrorView = () => {
-    return ( 
+  return (
     <StyledSection>
-        <Heading title="Something went wront..."
-                      size="20"
-                      center={false}
-                      fam="'Lato', sans-serif"
-                      as="h2"/>
-        <Paragraf
+      <Heading
+        title="Something went wront..."
+        size="20"
+        center={false}
+        fam="'Lato', sans-serif"
+        as="h2"
+      />
+      <Paragraf
         text="Take the dog for a walk, or..."
         size="12"
         color="828282"
@@ -35,12 +40,12 @@ const ErrorView = () => {
         lineheight="18"
         fam="'Montserrat', sans-serif;"
       />
-<StyledLottie animationData={errorLottie}/>
-<Link to="/listview">
-    <Button text="Go back to listview"/>
-</Link>
+      <StyledLottie animationData={errorLottie} />
+      <Link to="/listview">
+        <Button text="Go back to listview" />
+      </Link>
     </StyledSection>
-     );
-}
- 
+  );
+};
+
 export default ErrorView;

@@ -7,6 +7,9 @@ import Icon from "../components/icon";
 import ButtonImage from "../components/ButtonImages";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import useAxios from "../useAxios";
+
+import { useParams } from "react-router-dom";
 
 const StyledDetailCard = styled.main`
   background-color: white;
@@ -24,11 +27,14 @@ const StyledRow = styled.div`
   gap: 10px;
 `;
 
-const DetailCard = () => {
+const DetailCard = ({}) => {
+  let { id } = useParams();
+  const [data, error, loading] = useAxios(id);
+  /* console.log(data && data.animal) *//* vigtigt data && fordi det er en asynkron funktion, så data skal først hentes, så vises console.log */
   return (
-    <StyledDetailCard>
+    <StyledDetailCard key="id">
       <Heading
-        title="Greyhound"
+        title={data && data.animal.name}
         size="20"
         center={false}
         fam="'Lato', sans-serif"
@@ -39,7 +45,7 @@ const DetailCard = () => {
         <Paragraf
           size="14"
           color="828282"
-          text="New York City"
+          text={data && data.animal.contact.address.city}
           center={false}
           lineheight="18"
           fam="'Montserrat', sans-serif;"
@@ -50,7 +56,7 @@ const DetailCard = () => {
         <Paragraf
           size="14"
           color="4F4F4F"
-          text="Greyhound"
+          text={data && data.animal.type}
           center={false}
           lineheight="24"
           weight="600"
@@ -60,7 +66,7 @@ const DetailCard = () => {
         <Paragraf
           size="14"
           color="4F4F4F"
-          text="Male"
+          text={data && data.animal.gender}
           center={false}
           lineheight="24"
           weight="600"
@@ -71,7 +77,7 @@ const DetailCard = () => {
         <Paragraf
           size="16"
           color="9E9E9E"
-          text="The dog (Canis familiaris when considered a distinct species or Canis lupus familiaris when considered a subspecies of the wolf) is a domesticated carnivore of the fam..."
+          text={data && data.animal.description}
           center={false}
           lineheight="24"
         />
@@ -83,8 +89,6 @@ const DetailCard = () => {
           lineheight="24"
         />
       </StyledRow>
-      <ButtonImage />
-      <ButtonImage />
       <ButtonImage />
       <Link to="/listview">
         <Button text="Back" />

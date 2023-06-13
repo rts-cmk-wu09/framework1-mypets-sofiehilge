@@ -1,7 +1,17 @@
 import styled from "styled-components";
-import animalportrait from "../assets/animalportrait.png"
+import useAxios from "../useAxios";
+import dogImg from "../assets/Animal.png";
 
-const StyledButtonImg = styled.button`
+import { useParams } from "react-router-dom";
+
+const StyledSection = styled.section`
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+
+`;
+
+const StyledImg = styled.img`
   border: none;
   text-decoration: none;
   background: #f5f5f9;
@@ -9,18 +19,31 @@ const StyledButtonImg = styled.button`
     5px 5px 10px rgba(170, 170, 204, 0.25),
     10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 2rem;
 `;
 
-const StyledImg = styled.img`
-    object-fit: cover;
-`
-
 const ButtonImage = () => {
-  return <StyledButtonImg>
-<StyledImg img={animalportrait} alt="portrait"/>
-  </StyledButtonImg>;
+  let { id } = useParams();
+  const [data, error, loading] = useAxios(id);
+  return (
+    <StyledSection key="id">
+      <StyledImg
+        width="64"
+        height="64"
+        border="50"
+        src={
+          data && data.animal.photos.length > 0
+            ? data.animal.photos[0].full
+            : dogImg
+        }
+        alt="portrait"
+      />
+    </StyledSection>
+  );
 };
 
 export default ButtonImage;
