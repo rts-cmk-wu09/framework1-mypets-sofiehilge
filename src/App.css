@@ -26,6 +26,11 @@ img {
   background-color: #f5f5fa;
 }
 
+.flexcontainer{
+  display: flex;
+  
+}
+
 .center {
   display: flex;
   justify-content: center;
