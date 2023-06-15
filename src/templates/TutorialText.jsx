@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Heading from "../components/Heading";
 import Paragraf from "../components/Paragraf";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const StyledArticle = styled.article`
   width: 100%;
@@ -16,18 +17,20 @@ const StyledHr = styled.hr`
 `;
 const TutorialText = () => {
   return (
-    <StyledArticle>
-      <Heading title="My Pets" size="20" center={true} as="h1" />
-      <Paragraf
-        size="16"
-        color="828282"
-        text="Taking care of a pet is my favorite, it helps me to gaimr stress and fatigue."
-        center={true}
-        lineheight="24"
-        as="p"
-      />
-      <StyledHr />
-    </StyledArticle>
+    <>
+      <StyledArticle>
+        <Heading title="My Pets" size="20" center={true} as="h1" />
+        <Paragraf
+          size="16"
+          color="828282"
+          text="Taking care of a pet is my favorite, it helps me to gaimr stress and fatigue."
+          center={true}
+          lineheight="24"
+          as="p"
+        />
+        <StyledHr />
+      </StyledArticle>
+    </>
   );
 };
 

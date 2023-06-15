@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Heading from "../components/Heading";
-import ButtonIcon from "../components/ButtonIcon";
 import Icon from "../components/icon";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
@@ -72,7 +71,7 @@ const StyledHeart = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red
+  color: red;
 `;
 
 const StyledRowSpace = styled.div`
