@@ -17,7 +17,7 @@ const StyledDiv = styled.div`
 const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   /* display: grid;
   position: fixed;
   width: calc(100vw - 4rem);
@@ -34,27 +34,35 @@ const ListView = (props) => {
       <StyledDiv>
         <AnimalCategories
           text="Birds"
-          size="12"
-          color="828282"
+          size="14"
+          color="7878AB"
           center={false}
-          lineheight="18"
-          fam="'Montserrat', sans-serif;"
+          lineheight="20"
+          fam="'Lato', sans-serif;"
+          weight="700"
+          as="p"
         />
         <AnimalCategories
           text="Dog"
-          size="12"
-          color="828282"
+          size="14"
+          color="7878AB
+          "
           center={false}
-          lineheight="18"
-          fam="'Montserrat', sans-serif;"
+          lineheight="20"
+          fam="'Lato', sans-serif;"
+          weight="700"
+          p="as"
         />
         <AnimalCategories
           text="Cats"
-          size="12"
-          color="828282"
+          size="14"
+          color="7878AB
+          "
           center={false}
-          lineheight="18"
-          fam="'Montserrat', sans-serif;"
+          lineheight="20"
+          fam="'Lato', sans-serif;"
+          weight="700"
+          as="p"
         />
       </StyledDiv>
       <StyledColumn>

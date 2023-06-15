@@ -21,10 +21,10 @@ const StyledFooter = styled.div`
 const Footer = () => {
   return (
     <StyledFooter>
-      <ButtonIcon icon={<FaHouseUser color="BDBDBD"/>} />
-      <ButtonIcon icon={<FaComment color="BDBDBD" />} />
-      <ButtonIcon icon={<FaHeart color="BDBDBD"/>} />
-      <ButtonIcon icon={< FaHeart color="BDBDBD"/>} />
+      <ButtonIcon icon={<FaHouseUser color="BDBDBD" as="i"/>} />
+      <ButtonIcon icon={<FaComment color="BDBDBD" as="i"/>} />
+      <ButtonIcon icon={<FaHeart color="BDBDBD" as="i"/>} />
+      <ButtonIcon icon={< FaHeart color="BDBDBD" as="i"/>} />
     </StyledFooter>
   );
 };

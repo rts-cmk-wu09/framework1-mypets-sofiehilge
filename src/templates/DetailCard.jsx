@@ -18,6 +18,7 @@ const StyledDetailCard = styled.main`
   margin-top: -2rem;
   padding: 2rem;
   position: absolute;
+  width: 100%;
 `;
 
 const StyledRow = styled.div`
@@ -42,7 +43,7 @@ const DetailCard = ({}) => {
         as="h1"
       />
       <StyledRow>
-        <Icon icon={<FaMapPin color="57419d" />} />
+        <Icon icon={<FaMapPin color="57419d" as="i"/>} />
         <Paragraf
           size="14"
           color="828282"
@@ -50,10 +51,11 @@ const DetailCard = ({}) => {
           center={false}
           lineheight="18"
           fam="'Montserrat', sans-serif;"
+          as="p"
         />
       </StyledRow>
       <StyledRow>
-        <ButtonIcon icon={<FaPaw color="F4B207" />} />
+        <ButtonIcon icon={<FaPaw color="F4B207" as="i"/>} />
         <Paragraf
           size="14"
           color="4F4F4F"
@@ -62,8 +64,9 @@ const DetailCard = ({}) => {
           lineheight="24"
           weight="600"
           fam="'Montserrat', sans-serif;"
+          as="p"
         />
-        <ButtonIcon icon={<FaVenusMars color="FF8893" />} />
+        <ButtonIcon icon={<FaVenusMars color="FF8893" as="i"/>} />
         <Paragraf
           size="14"
           color="4F4F4F"
@@ -72,6 +75,7 @@ const DetailCard = ({}) => {
           lineheight="24"
           weight="600"
           fam="'Montserrat', sans-serif;"
+          as="p"
         />
       </StyledRow>
       <StyledRow>
@@ -81,14 +85,16 @@ const DetailCard = ({}) => {
           text={data && data.animal.description}
           center={false}
           lineheight="24"
+          as="p"
         />
-        <Paragraf
+      {/*   <Paragraf
           size="16"
           color="57419D"
           text="More"
           center={false}
           lineheight="24"
-        />
+          as="p"
+        /> */}
       </StyledRow>
       <ButtonImage />
       <Link to="/listview">

@@ -2,26 +2,28 @@ import styled from "styled-components";
 import Heading from "../components/Heading";
 import ButtonIcon from "../components/ButtonIcon";
 import Icon from "../components/icon";
-import { FaHeart, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import Paragraf from "../components/Paragraf";
 import useAxios from "../useAxios";
 import { Link } from "react-router-dom";
 import LoadingView from "../pages/LoadingView";
 import ErrorView from "../pages/ErrorView";
 import dogImg from "../assets/Animal.png";
-
+import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 const StyledImg = styled.img`
   object-fit: cover;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
   border-radius: 32px;
-`
+`;
 const StyledFigure = styled.figure`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 const StyledCardContainer = styled.article`
   display: flex;
   justify-content: space-evenly;
@@ -44,6 +46,18 @@ const StyledRow = styled.div`
   padding: 5px;
 `;
 
+const StyledHeart = styled.span`
+  border: none;
+  text-decoration: none;
+  background: #f5f5f9;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
+    5px 5px 10px rgba(170, 170, 204, 0.25),
+    10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+`;
+
 const StyledRowSpace = styled.div`
   display: flex;
   flex-direction: row;
@@ -63,7 +77,12 @@ const StyledP = styled.p`
 `;
 
 const AnimalCard = () => {
+  const { id } = useParams("id");
   const [data, error, loading] = useAxios();
+  const [bookmarked, setBookmarked] = useState(
+    JSON.parse(localStorage.getItem(id))
+  );
+  console.log(data.id);
   return (
     <>
       {error && <ErrorView />}
@@ -73,47 +92,72 @@ const AnimalCard = () => {
         /* Logical and && hvis værdien på højre side er true, så udføres der på højre side!! */
         <>
           {data.animals.map((animal) => (
-            <Link to={`/detailview/${animal.id}`} key={animal.id}>
-              <StyledCardContainer>
-             <StyledFigure>
-              <StyledImg width="124" height="124" src={
+            <StyledCardContainer key={animal.id}>
+              <Link to={`/detailview/${animal.id}`}>
+                <StyledFigure>
+                  <StyledImg
+                    width="124"
+                    height="124"
+                    src={
                       animal.photos.length > 0 ? animal.photos[0].full : dogImg
-                    }/>
-             </StyledFigure>
-                <StyledColumn>
-                  <StyledRowSpace>
-                    <Heading
-                      title={animal.name}
-                      size="20"
-                      center={false}
-                      fam="'Lato', sans-serif"
-                      as="h2"
-                    />
-                    <ButtonIcon icon={<FaHeart color="FF4B33" />} />
-                  </StyledRowSpace>
-                  <StyledRow>
-                    <Icon icon={<FaMapMarkerAlt color="57419d" />} />
-                    <Paragraf
-                      size="12"
-                      color="828282"
-                      text={animal.contact.address.city}
-                      center={false}
-                      lineheight="18"
-                      fam="'Montserrat', sans-serif;"
-                    />
-                  </StyledRow>
-                  <StyledSpan>
-                    <StyledP>
-                      {animal.description != null &&
-                      animal.description.length > 100
-                        ? animal.description.split(" ").slice(0, 3).join(" ") +
-                          "..."
-                        : "Click for more details..."}
-                    </StyledP>
-                  </StyledSpan>
-                </StyledColumn>
-              </StyledCardContainer>
-            </Link>
+                    }
+                  />
+                </StyledFigure>
+              </Link>
+              <StyledColumn>
+                <StyledRowSpace>
+                  <Heading
+                    title={animal.name}
+                    size="20"
+                    center={false}
+                    fam="'Lato', sans-serif"
+                    as="h2"
+                  />
+                  <StyledHeart
+                    onClick={() => {
+                      setBookmarked(!bookmarked);
+                      bookmarked
+                        ? localStorage.removeItem(id)
+                        : localStorage.setItem(id, JSON.stringify(animal.name));
+                    }}
+                  >
+                    {!bookmarked ? (
+                      <AiOutlineHeart style={{ color: "#BDBDBD" }} />
+                    ) : (
+                      <AiFillHeart />
+                    )}
+                  </StyledHeart>
+                </StyledRowSpace>
+                <StyledRow>
+                  <Icon icon={<FaMapMarkerAlt color="57419d" as="i" />} />
+                  <Paragraf
+                    size="12"
+                    color="828282"
+                    text={animal.contact.address.city}
+                    center={false}
+                    lineheight="18"
+                    fam="'Montserrat', sans-serif;"
+                    as="p"
+                  />
+                </StyledRow>
+                <StyledSpan>
+                  <StyledP
+                    as="p"
+                    size="14"
+                    color="4f4f4f"
+                    fam="'Montserrat', sans-serif;"
+                    center={false}
+                    lineheight="18"
+                  >
+                    {animal.description != null &&
+                    animal.description.length > 100
+                      ? animal.description.split(" ").slice(0, 3).join(" ") +
+                        "..."
+                      : "Click for more details..."}
+                  </StyledP>
+                </StyledSpan>
+              </StyledColumn>
+            </StyledCardContainer>
           ))}
         </>
       )}

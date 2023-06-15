@@ -24,6 +24,7 @@ const TutorialText = () => {
         text="Taking care of a pet is my favorite, it helps me to gaimr stress and fatigue."
         center={true}
         lineheight="24"
+        as="p"
       />
       <StyledHr />
     </StyledArticle>

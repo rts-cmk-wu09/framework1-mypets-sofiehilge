@@ -44,7 +44,7 @@ const Header = () => {
       <StyledFlex>
         <StyledImage src={portriat} alt="portrait" />
         <StyledDiv>
-          <Icon icon={<FaMapMarkerAlt color="57419d" />} />
+          <Icon icon={<FaMapMarkerAlt color="57419d" as="i"/>} />
           <StyledSelect>
             <option value="132u29852">New York</option>
             <option value="1348u23oi5u2">Copenhagen</option>
@@ -52,7 +52,7 @@ const Header = () => {
           </StyledSelect>
         </StyledDiv>
       </StyledFlex>
-      <ButtonIcon icon={<BiBell color="5533EA" />} />
+      <ButtonIcon icon={<BiBell color="5533EA" as="i"/>} />
     </StyledHeader>
   );
 };

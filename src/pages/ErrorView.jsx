@@ -39,6 +39,7 @@ const ErrorView = () => {
         center={true}
         lineheight="18"
         fam="'Montserrat', sans-serif;"
+        as="p"
       />
       <StyledLottie animationData={errorLottie} />
       <Link to="/listview">

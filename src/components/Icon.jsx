@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledIcon = styled.i`
+const StyledIcon = styled((props) => props.as)`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledParagraf = styled.p`
+const StyledParagraf = styled((props) => props.as)`
   font-family: ${(props) => props.fam};
   font-size: ${(props) => props.size}px;
   font-weight: ${(props) => props.weight};

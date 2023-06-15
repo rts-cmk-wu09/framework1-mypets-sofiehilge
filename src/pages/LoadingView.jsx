@@ -25,6 +25,7 @@ const LoadingView = () => {
         center={true}
         lineheight="18"
         fam="'Montserrat', sans-serif;"
+        as="p"
       />
       <StyledLottie animationData={loadingLottie} />
     </StyledSection>
