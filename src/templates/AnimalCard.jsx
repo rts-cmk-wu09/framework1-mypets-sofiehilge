@@ -97,8 +97,7 @@ const StyledP = styled.p`
 
 const AnimalCard = () => {
   const { id } = useParams("id");
-  const [data, error, loading] = useAxios();
-
+  const [data, error, loading] = useAxios("animals");
   /*   const handleLike = (index) => {
     const updatedCards = [...cards];
     updatedCards[index].liked = !updatedCards[index].liked;
