@@ -1,11 +1,13 @@
 import Header from "../templates/Header";
 import AnimalCategories from "../components/Categories";
 import styled from "styled-components";
-import AnimalCard from "../templates/Card";
+import AnimalCard from "../templates/AnimalCard";
 import Footer from "../templates/Footer";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom";
 import useAxios from "../useAxios";
 import Paragraf from "../components/Paragraf";
+import ErrorView from "./ErrorView";
+import LoadingView from "./LoadingView"; */
 
 const StyledDiv = styled.div`
   display: flex;
@@ -17,7 +19,7 @@ const StyledDiv = styled.div`
 const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   /* display: grid;
   position: fixed;
   width: calc(100vw - 4rem);
@@ -28,42 +30,26 @@ const StyledColumn = styled.div`
 `;
 
 const ListView = (props) => {
+  /* const [data, error, loading]= useAxios(`animals?type=${type.name}`) */
+  /* Vi skal hente to forskellige endpoints, et til typer og et til animalæs */
+  /* const [typeData, typeError, typeLoading]= useAxios("types") */
+  /* useAxios referere til type i vores useState som, som udgangspunkt er animals. */
+  /* const [type, setType] = useState("animals") */
+  /* når data kommer tilbage er vi nødt til at have et state der opdatere sig. Data skal opdatere et state, så den kan lave et rerender igen */
   return (
+    /* {typeData && typeData.types.map((type)=> (
+      <button onClick={() =>{
+        setType(`animals?type=${type.name}`)
+      }} key={type.name}>{type.name}</button>;
+    )}  */
+    /* Hver gang knappen trykkes på skal typerne vises. Vi har en variable der skal kunne ændre sig, derfor skal det være en state. */
     <>
       <Header />
       <StyledDiv>
-        <AnimalCategories
-          text="Birds"
-          size="14"
-          color="7878AB"
-          center={false}
-          lineheight="20"
-          fam="'Lato', sans-serif;"
-          weight="700"
-          as="p"
-        />
-        <AnimalCategories
-          text="Dog"
-          size="14"
-          color="7878AB
-          "
-          center={false}
-          lineheight="20"
-          fam="'Lato', sans-serif;"
-          weight="700"
-          p="as"
-        />
-        <AnimalCategories
-          text="Cats"
-          size="14"
-          color="7878AB
-          "
-          center={false}
-          lineheight="20"
-          fam="'Lato', sans-serif;"
-          weight="700"
-          as="p"
-        />
+        <AnimalCategories text="All" />
+        <AnimalCategories text="Dog" />
+        <AnimalCategories text="Cats" />
+        <AnimalCategories text="Birds" />
       </StyledDiv>
       <StyledColumn>
         <AnimalCard />

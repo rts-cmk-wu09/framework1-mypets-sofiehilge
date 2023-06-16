@@ -17,12 +17,12 @@ const StyledCategories = styled.button`
   text-align: center;
   display: flex;
   align-items: center;
-  font-family: ${(props) => props.fam};
-  font-size: ${(props) => props.size}px;
-  font-weight: ${(props) => props.weight};
-  color: #${(props) => props.color};
-  line-height: ${(props) => props.lineheight}px;
-  ${(props) => props.center && "text-align:center"}
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #7878ab;
+  line-height: 20px;
+  text-align: center;
   word-wrap: break-word;
 `;
 

@@ -94,3 +94,7 @@ udgangspunktet for state variablet er at den er false, fordi det skal være brug
 -{!bookmarked? <StyledFaRegBookmark/> : <StyledFaBookmark/>}
 
 - hvi
+
+
+CATEGORI AND LOCATION:
+VI skal bruge en state variable der kan opdatere categories og en state variable der kan opdatere location
