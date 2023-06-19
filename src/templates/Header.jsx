@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaBell, FaMapMarkerAlt } from "react-icons/fa";
+import {  FaMapMarkerAlt } from "react-icons/fa";
 import { BiBell } from "react-icons/bi";
 import ButtonIcon from "../components/ButtonIcon";
 import Icon from "../components/icon";

@@ -8,7 +8,7 @@ import useAxios from "../useAxios";
 import { Link } from "react-router-dom";
 import LoadingView from "../pages/LoadingView";
 import ErrorView from "../pages/ErrorView";
-import dogImg from "../assets/Animal.png";
+import ButtonIcon from "../components/ButtonIcon";
 import noImg from "../assets/noimg.jpg";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
@@ -35,7 +35,7 @@ const StyledCardContainer = styled.article`
   margin: 26px;
   position: relative;
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 1.5fr, 0.5fr;
 `;
 
 const StyledLinkContainer = styled.span`
@@ -58,23 +58,24 @@ const StyledRow = styled.div`
 `;
 
 const StyledHeart = styled.span`
-  border: none;
+  /* border: none;
   text-decoration: none;
   background: white;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
     5px 5px 10px rgba(170, 170, 204, 0.25),
     10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
-  border-radius: 50%;
+  border-radius: 50%; */
   height: 40px;
   width: 40px;
-  padding: 10px;
+/*   padding: 10px; */
   grid-column-start: 2;
   grid-column-end: 2;
   margin-top: 10px;
+  margin-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
+  /*   color: red; */
 `;
 
 const StyledRowSpace = styled.div`
@@ -133,6 +134,7 @@ const AnimalCard = () => {
                         size="20"
                         center={false}
                         fam="'Lato', sans-serif"
+                     
                         as="h2"
                       />
                     </StyledRowSpace>
@@ -169,6 +171,9 @@ const AnimalCard = () => {
                   </StyledColumn>
                 </Link>
               </StyledLinkContainer>
+              <StyledHeart>
+                <ButtonIcon icon={<AiOutlineHeart color="BDBDBD" as="i" />} />
+              </StyledHeart>
             </StyledCardContainer>
           ))}
         </>
