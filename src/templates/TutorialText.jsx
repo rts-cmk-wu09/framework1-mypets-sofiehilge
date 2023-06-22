@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Heading from "../components/Heading";
 import Paragraf from "../components/Paragraf";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 const StyledArticle = styled.article`
   width: 100%;
@@ -9,6 +8,7 @@ const StyledArticle = styled.article`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 `;
 
 const StyledHr = styled.hr`

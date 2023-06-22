@@ -22,7 +22,7 @@ const StyledSection = styled.section`
   margin-top: 5rem;
 `;
 
-const ErrorView = () => {
+const ErrorViewList = () => {
   return (
     <StyledSection>
       <Heading
@@ -42,11 +42,11 @@ const ErrorView = () => {
         as="p"
       />
       <StyledLottie animationData={errorLottie} />
-      <Link to="/listview">
-        <Button text="Go back to listview" />
+      <Link to="/">
+        <Button text="Go back to tutorial" />
       </Link>
     </StyledSection>
   );
 };
 
-export default ErrorView;
+export default ErrorViewList;

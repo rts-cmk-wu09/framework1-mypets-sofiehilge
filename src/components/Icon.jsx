@@ -5,8 +5,8 @@ const StyledIcon = styled((props) => props.as)`
   justify-content: center;
   align-items: center;
   color: #${(props) => props.color};
-  width: 20px;
-  height: 20px;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
 `;
 const Icon = (props) => {
   return <StyledIcon {...props}>{props.icon}</StyledIcon>;

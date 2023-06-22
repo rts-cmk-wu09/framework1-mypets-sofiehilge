@@ -9,6 +9,7 @@ const StyledImg = styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
+
 `;
 
 const StyledBackground = styled.figure`
@@ -18,7 +19,7 @@ const StyledBackground = styled.figure`
   align-items: end;
 `;
 
-const DetailPortrait = () => {
+const DetailPortrait = ({}) => {
   let { id } = useParams();
   const [data, error, loading] = useAxios(id);
 

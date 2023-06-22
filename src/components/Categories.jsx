@@ -12,7 +12,6 @@ const StyledCategories = styled.button`
   width: fit-content;
   height: 32px;
   padding: 0 2rem;
-  margin: 5px;
   gap: 5px;
   text-align: center;
   display: flex;
@@ -24,6 +23,9 @@ const StyledCategories = styled.button`
   line-height: 20px;
   text-align: center;
   word-wrap: break-word;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-left: 2rem;
 `;
 
 const AnimalCategories = (props) => {

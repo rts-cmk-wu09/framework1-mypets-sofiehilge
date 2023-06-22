@@ -8,7 +8,6 @@ const StyledSection = styled.section`
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-
 `;
 
 const StyledImg = styled.img`
@@ -23,7 +22,9 @@ const StyledImg = styled.img`
   width: 64px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
 `;
 
 const ButtonImage = () => {
