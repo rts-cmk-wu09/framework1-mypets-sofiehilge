@@ -20,7 +20,7 @@ const StyledButton = styled.button`
   border-radius: 50%;
   height: 40px;
   width: 40px;
-  grid-column-start: 2;
+ /*  grid-column-start: 2; */
   margin-top: 10px;
   margin-right: 5px;
   /* display: flex;

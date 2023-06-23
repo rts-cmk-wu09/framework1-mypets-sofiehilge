@@ -15,15 +15,17 @@ import StyledCardComponent from "../components/StyledCardComponent";
 import FavButton from "../components/FavButton";
 
 const StyledCardContainer = styled.article`
-/*   width: 327px; */
+  width: 327px;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
     5px 5px 10px rgba(170, 170, 204, 0.25),
     10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #ffffff;
   border-radius: 32px;
   margin: 26px;
- /*  position: relative; */
   display: grid;
-  grid-template-columns: 1fr, 45px;
+  grid-template-columns: 124px 1fr 45px;
+  /*  position: relative; */
+  /*  
+  grid-template-columns: 1fr, 45px; */
 `;
 const StyledFigure = styled.figure`
   display: flex;
@@ -32,16 +34,19 @@ const StyledFigure = styled.figure`
   border-radius: 32px;
   width: 124px;
   height: 124px;
-  
+  grid-column-start: 1;
+  grid-column-end: 2;
 `;
 const StyledLinkContainer = styled.span`
   display: flex;
   flex-direction: row;
   align-items: center;
-  grid-column-start: 1;
+  /*   grid-column-start: 1; */
   /*  grid-column-start: 1;
   grid-column-end: 1; */
   padding-top: 1rem;
+  grid-column-start: 1;
+  grid-column-end: 2;
 `;
 
 const StyledImg = styled.img`
@@ -50,12 +55,13 @@ const StyledImg = styled.img`
   height: ${(props) => props.height}px;
   border-radius: 32px;
   filter: grayscale(60%);
-
 `;
 const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  grid-column-start: 2;
+  grid-column-end: 3;
 `;
 const StyledRow = styled.div`
   display: flex;
@@ -80,6 +86,11 @@ const StyledP = styled.p`
   size: 14px;
   color: #4f4f4f;
   font-family: "Montserrat", sans-serif;
+`;
+
+const StyledFavButton = styled.div`
+  grid-column-start: 3;
+  grid-column-end: 4;
 `;
 
 const AnimalCard = () => {
@@ -161,7 +172,9 @@ const AnimalCard = () => {
                 <div>{liked ? <StyledHeart /> : <AiOutlineHeart />}</div> */}
               {/*  <ButtonIcon icon={<AiOutlineHeart color="BDBDBD" as="i" />} /> */}
               {/*  </StyledHeart> */}
-              <FavButton />
+              <StyledFavButton>
+                <FavButton />
+              </StyledFavButton>
             </StyledCardContainer>
           ))}
         </>

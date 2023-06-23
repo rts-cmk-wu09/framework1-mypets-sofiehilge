@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  Route,
+  Route
 } from "react-router-dom";
 
 import TutorialApp from "./pages/Tutorial.jsx";
