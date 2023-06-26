@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Montserrat:wght@500;600&display=swap");
+
+* {
+  box-sizing: border-box; /* gør at border og padding æder sig ind på elementet som på den måde bliver inden for de f.eks. fastsatte 100% */
+}
+
+#root {
+  max-width: 768px;
+  font-family: "Lato", sans-serif;
+}
+
+html,
+body,
+figure {
+  /* hvis du gør dette på * skal resette den på dine p-tags eksempelvis  */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5fa;
+}
+
+img {
+  max-width: 100%; /* Så bliver billedet ikke større end 100%, men kan sagtens være mindre */
+}
+
+.backgroundcolor {
+  background-color: #f5f5fa;
+}
+
+.flexcontainer{
+  display: flex;
+  
+}
+
+.justify{
+  justify-content: center;
+}
+
+.flexstart{
+  justify-content: flex-start;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.movieCardContainer::-webkit-scrollbar {
+  display: none;
+}
